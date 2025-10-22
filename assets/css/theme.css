@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+/* 👇 Tailwind v4 requires defining color variables manually */
+@layer base {
+  :root {
+    --color-primary: #2563eb;   /* blue-600 */
+    --color-secondary: #64748b; /* slate-500 */
+    --color-success: #16a34a;
+    --color-warning: #facc15;
+    --color-error: #dc2626;
+    --color-info: #0ea5e9;
+  }
+}

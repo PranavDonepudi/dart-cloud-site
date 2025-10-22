@@ -1,20 +1,16 @@
 // nuxt.config.ts
-import { fileURLToPath } from 'url'
+import { defineNuxtConfig } from 'nuxt/config'
+import path from 'path'
 
 export default defineNuxtConfig({
-  // ✅ correct alias setup
-  alias: {
-    '@': fileURLToPath(new URL('./', import.meta.url)),
-    '~': fileURLToPath(new URL('./', import.meta.url)),
-  },
-  css: ['@/assets/css/tailwind.css'],
+  css: [path.resolve('assets/css/tailwind.css')],
   postcss: {
     plugins: {
-    '@tailwindcss/postcss': {},
+      tailwindcss: {},
+      autoprefixer: {},
+    },
   },
-  },
-
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@nuxt/ui'],
+  modules: ['@nuxt/ui'],
 })
