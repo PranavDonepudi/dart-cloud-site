@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col bg-transparent">
     <Navbar />
     
-    <main class="flex-grow">
+    <main class="flex-grow bg-transparent">
       <NuxtPage />
     </main>
     
@@ -16,9 +16,13 @@ import Footer from '~/components/Footer.vue'
 </script>
 
 <style>
-/* Global styles only */
 body {
   margin: 0;
   padding: 0;
+  background: transparent;
+}
+
+html {
+  background: transparent;
 }
 </style>

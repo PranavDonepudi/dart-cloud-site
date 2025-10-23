@@ -1,12 +1,10 @@
 <template>
   <header
-  class="fixed top-0 left-0 w-full z-50 bg-[#342D76] flex justify-center"
-  style="--navbar-height: 133px;"
->
+    class="fixed top-0 left-0 w-full z-50 bg-[#342D76] flex justify-center"
+    style="height: 133px;"
+  >
     <div
-      class="w-full max-w-[1920px] flex items-center justify-between 
-             px-[120px] py-[24px] md:py-[32px] lg:py-[36px]"
-      style="height: 110px;"
+      class="w-full max-w-[1920px] h-[133px] flex items-center justify-between px-[120px] py-[40px]"
     >
       <!-- Logo -->
       <div class="flex items-center gap-2">
@@ -37,8 +35,8 @@
 
       <!-- CTA Button -->
       <button
-        class="w-[199px] h-[46px] bg-[#F9B223] text-[#42389E] font-semibold font-dmsans 
-               text-[18px] leading-none rounded-[8px] px-[24px] py-[12px] transition duration-200"
+        class="w-[199px] h-[46px] bg-[#F9B223] text-[#42389E] font-semibold font-dmsans
+               text-[18px] leading-none rounded-[8px] px-[24px] py-[12px] hover:bg-[#e5961c] transition duration-200"
       >
         Deploy Functions
       </button>
@@ -52,6 +50,7 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap');
+
 .font-dmsans {
   font-family: 'DM Sans', sans-serif;
 }

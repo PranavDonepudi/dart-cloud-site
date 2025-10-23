@@ -1,18 +1,20 @@
 <template>
   <section
     class="relative w-full flex flex-col items-center text-center text-white overflow-visible
-           pt-[calc(var(--navbar-height)+80px)] pb-[300px] min-h-[950px]"
+           pt-[213px] pb-[300px] min-h-[950px]"
   >
-    <!-- Background -->
+    <!-- Background Image - Using cover for full coverage -->
     <div
       class="absolute inset-0 -z-10"
       style="
         background-color: #342D76;
-        background-image: url('../images/hero-bkg.jpg');
+        background-image: url('/images/hero-bkg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: top center;
+        background-position: center center;
         transform: scaleX(-1);
+        width: 100%;
+        height: 100%;
       "
     ></div>
 
@@ -45,20 +47,19 @@
       </div>
     </div>
 
-    <!-- Image overlapping page 2 -->
+    <!-- Image overlapping page 2 (NO SHADOWS) -->
     <div class="absolute left-1/2 bottom-[-400px] -translate-x-1/2 z-20">
       <!-- Main large image -->
       <div
-        class="relative w-[1396px] h-[786px] rounded-[12px] border border-[#42389E]
-               shadow-[0_0_10px_10px_rgba(0,0,0,0.05)] overflow-hidden"
+        class="relative w-[1396px] h-[786px] rounded-[12px] border border-[#42389E] overflow-hidden"
       >
         <img
-          src="../images/home-image.png"
+          src="/images/home-image.png"
           alt="Create Functions Preview"
           class="w-full h-full object-cover"
         />
 
-        <!-- First overlapping white image -->
+        <!-- First overlapping white image (NO SHADOW) -->
         <div
           class="absolute"
           style="
@@ -74,17 +75,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
           "
         >
           <img
-            src="../images/overlap-image-1.png"
+            src="/images/overlap-image-1.png"
             alt="Inner Function UI"
             class="w-full h-full object-contain"
           />
         </div>
 
-        <!-- Second smaller overlapping image -->
+        <!-- Second smaller overlapping image (NO SHADOW) -->
         <div
           class="absolute"
           style="
@@ -96,11 +96,10 @@
             border: 1px solid #E5E5E5;
             background-color: #ffffff;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
           "
         >
           <img
-            src="../images/overlap-image-2.png"
+            src="/images/overlap-image-2.png"
             alt="Function Config View"
             class="w-full h-full object-contain"
           />
@@ -111,9 +110,13 @@
 </template>
 
 <script setup>
-// Hero section logic
+// Hero section component
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap');
+
+.font-dmsans {
+  font-family: 'DM Sans', sans-serif;
+}
 </style>
