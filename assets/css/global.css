@@ -1,0 +1,10 @@
+:root {
+  --navbar-height: 133px;
+}
+
+/* Optional: responsive adjustment */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 100px;
+  }
+}

@@ -3,7 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 import path from 'path'
 
 export default defineNuxtConfig({
-  css: [path.resolve('assets/css/tailwind.css')],
+  css: [path.resolve('assets/css/global.css'),path.resolve('assets/css/tailwind.css')],
   postcss: {
     plugins: {
       tailwindcss: {},
