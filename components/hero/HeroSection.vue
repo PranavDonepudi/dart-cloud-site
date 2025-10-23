@@ -1,34 +1,38 @@
 <template>
   <section
     class="relative w-full flex flex-col items-center text-center text-white overflow-visible
-           pt-[213px] pb-[300px] min-h-[950px]"
+           pt-[213px] pb-[300px]"
+    style="min-height: 1003px;"
   >
-    <!-- Background Image - Using cover for full coverage -->
+    <!-- Background Image - Rotated 180 degrees -->
     <div
       class="absolute inset-0 -z-10"
       style="
         background-color: #342D76;
         background-image: url('/images/hero-bkg.jpg');
-        background-size: cover;
+        background-size: 1920px 1003px;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center top;
         transform: scaleX(-1);
-        width: 100%;
-        height: 100%;
+        width: 1920px;
+        height: 1003px;
       "
     ></div>
 
     <!-- Overlay -->
-    <div class="absolute inset-0 -z-10 bg-[#342D76]/70"></div>
+    <div class="absolute inset-0 -z-10 bg-[#342D76]/70" style="height: 1003px;"></div>
 
-    <!-- Hero Text + Buttons -->
-    <div class="relative z-10 px-6 sm:px-12 max-w-4xl">
-      <h1 class="text-4xl sm:text-6xl font-bold mb-6 leading-tight font-dmsans">
+    <!-- Hero Text + Buttons Frame (NOT rotated) -->
+    <div 
+      class="relative z-10 flex flex-col items-center"
+      style="width: 1087px; max-height: 308px; gap: 24px;"
+    >
+      <h1 class="text-4xl sm:text-6xl font-bold leading-tight font-dmsans">
         Build and Deploy Server-less<br />
         Functions Using <span class="text-[#F9B223]">Dart</span>
       </h1>
 
-      <p class="text-lg text-gray-200 mb-10 font-dmsans">
+      <p class="text-lg text-gray-200 font-dmsans">
         Transform raw data into clean, actionable insights instantly.<br />
         No infrastructure headaches.
       </p>
@@ -47,7 +51,10 @@
       </div>
     </div>
 
-    <!-- Image overlapping page 2 (NO SHADOWS) -->
+    <!-- Spacing after buttons before image -->
+    <div class="h-[120px]"></div>
+
+    <!-- Image overlapping page 2 -->
     <div class="absolute left-1/2 bottom-[-400px] -translate-x-1/2 z-20">
       <!-- Main large image -->
       <div
@@ -59,7 +66,7 @@
           class="w-full h-full object-cover"
         />
 
-        <!-- First overlapping white image (NO SHADOW) -->
+        <!-- First overlapping white image -->
         <div
           class="absolute"
           style="
@@ -84,7 +91,7 @@
           />
         </div>
 
-        <!-- Second smaller overlapping image (NO SHADOW) -->
+        <!-- Second smaller overlapping image -->
         <div
           class="absolute"
           style="

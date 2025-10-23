@@ -5,18 +5,20 @@
     <!-- Title + Text -->
     <div>
       <h3
-        class="text-[#000000] font-dmsans font-bold text-[20px] leading-[100%] mb-[12px]"
+        class="text-[#0E121B] font-dmsans font-semibold text-[20px] leading-[120%] mb-[12px]"
+        style="letter-spacing: 0%; vertical-align: middle; font-weight: 600;"
       >
         {{ title }}
       </h3>
       <p
-        class="text-[#323338] font-dmsans text-[16px] leading-[140%] font-normal"
+        class="text-[#5F5F60] font-dmsans text-[14px] leading-[140%] font-normal"
+        style="letter-spacing: 0%; vertical-align: middle;"
       >
         {{ description }}
       </p>
     </div>
     
-    <!-- Image -->
+    <!-- Image (completely contained within the border) -->
     <div
       class="mt-[20px] w-full h-[180px] border border-[#42389E] rounded-[6px] bg-white flex justify-center items-center overflow-hidden"
     >
@@ -27,24 +29,24 @@
       />
     </div>
     
-    <!-- Button -->
+    <!-- Button - Transparent with arrow -->
     <div class="flex justify-start mt-[24px]">
       <button
-        class="flex items-center gap-2 text-[#42389E] font-dmsans font-medium text-[16px] leading-[100%] border-b border-transparent hover:border-[#42389E] transition"
+        class="flex items-center gap-2 text-[#42389E] font-dmsans font-medium text-[16px] leading-[100%] hover:opacity-70 transition"
       >
         {{ buttonText }}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke-width="2"
+          stroke-width="2.5"
           stroke="currentColor"
-          class="w-4 h-4"
+          class="w-5 h-5"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M9 5l7 7-7 7"
+            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
           />
         </svg>
       </button>
@@ -76,3 +78,11 @@ defineProps({
   }
 })
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap');
+
+.font-dmsans {
+  font-family: 'DM Sans', sans-serif;
+}
+</style>

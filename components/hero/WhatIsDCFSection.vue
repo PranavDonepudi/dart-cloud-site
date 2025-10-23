@@ -2,9 +2,10 @@
   <section class="relative w-full bg-white py-[160px]">
     <!-- Section Title -->
     <h2
-      class="text-center text-[#42389E] font-bold font-dmsans text-[32px] mb-[100px]"
+      class="text-center text-[#42389E] font-dmsans font-bold text-[32px] leading-[100%] mb-[100px]"
+      style="letter-spacing: 0%; vertical-align: middle;"
     >
-      What Is <span class="text-[#342D76]">DartCloudFunctions</span>
+      What Is <span class="text-[#42389E]">DartCloudFunctions</span>
     </h2>
 
     <!-- Content Grid -->
@@ -15,17 +16,19 @@
       <div class="px-[100px]">
         <!-- Heading -->
         <h3
-          class="text-[#000000] font-dmsans font-semibold text-[28px] leading-[100%] mb-[32px]"
+          class="text-[#0E121B] font-dmsans font-semibold text-[24px] leading-[100%] mb-[32px]"
+          style="letter-spacing: 0%; vertical-align: middle; font-weight: 600;"
         >
           Redefining Server-less for Dart Developers
         </h3>
 
         <!-- Paragraph 1 -->
         <p
-          class="text-[#323338] font-dmsans font-normal text-[18px] leading-[100%] mb-[20px]"
+          class="text-[#5F5F60] font-dmsans font-normal text-[16px] leading-[100%] mb-[20px]"
+          style="letter-spacing: 0%; vertical-align: middle;"
         >
           DartCloudFunctions is the
-          <span class="text-[#42389E] font-medium">
+          <span class="text-[#42389E]">
             "first-of-its-kind server-less platform"
           </span>
           purpose-built for Dart, designed to simplify how enterprise teams build,
@@ -34,7 +37,8 @@
 
         <!-- Paragraph 2 -->
         <p
-          class="text-[#323338] font-dmsans font-normal text-[18px] leading-[100%]"
+          class="text-[#5F5F60] font-dmsans font-normal text-[16px] leading-[100%]"
+          style="letter-spacing: 0%; vertical-align: middle;"
         >
           With DartCloudFunctions, you write lightweight Dart functions, trigger
           them via schedules, or HTTP requests, and deploy without managing servers.
@@ -43,14 +47,32 @@
 
       <!-- Right Image in Purple Frame -->
       <div class="relative flex justify-center items-center">
+        <!-- Outer Purple Box - Auto-sized to content -->
         <div
-          class="bg-[#42389E] rounded-[12px] p-[12px] shadow-[0_4px_15px_rgba(0,0,0,0.1)] w-fit"
+          class="bg-[#42389E] rounded-[12px] p-[48px]"
+          style="box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);"
         >
-          <img
-            src="/images/dashboard.png"
-            alt="DartCloud Dashboard"
-            class="rounded-[8px] w-[800px] h-auto object-contain"
-          />
+          <!-- Inner Image Box - Max dimensions, auto-adjust to image -->
+          <div
+            class="rounded-[6px] border-[0.5px] border-[#8D8D8D] overflow-hidden flex items-center justify-center"
+            style="
+              max-width: 732px;
+              max-height: 412px;
+              box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);
+            "
+          >
+            <img
+              src="/images/dashboard.png"
+              alt="DartCloud Dashboard"
+              style="
+                max-width: 732px;
+                max-height: 412px;
+                width: 100%;
+                height: auto;
+                display: block;
+              "
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -60,3 +82,11 @@
 <script setup>
 // What is DCF section
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap');
+
+.font-dmsans {
+  font-family: 'DM Sans', sans-serif;
+}
+</style>

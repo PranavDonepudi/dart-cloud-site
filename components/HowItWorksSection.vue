@@ -3,6 +3,7 @@
     <!-- Title -->
     <h2
       class="text-[#42389E] text-center font-dmsans font-bold text-[32px] leading-[100%] mb-[80px]"
+      style="letter-spacing: 0%; vertical-align: middle;"
     >
       How DartCloudFunctions Works
     </h2>
