@@ -200,17 +200,368 @@
           class="rounded-[8px] w-[800px] h-auto object-contain"
         />
       </div>
-    </div>
-    <CTA class="mt-[160px]" />
+    </div> 
 
   </div>
-    <Footer />
+    
+</section>
+<!-- How DartCloudFunctions Works Section -->
+  <section class="bg-white py-[100px]">
+    <!-- Title -->
+    <h2
+      class="text-[#42389E] text-center font-dmsans font-bold text-[32px] leading-[100%] mb-[80px]"
+    >
+      How DartCloudFunctions Works
+    </h2>
+
+    <!-- Three cards container -->
+    <div
+      class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[40px] justify-items-center"
+    >
+    <!-- Card 1 -->
+<div
+  class="w-[370px] h-[420px] bg-[#F9A71E33] rounded-[12px] shadow-md p-[40px] flex flex-col justify-between"
+>
+  <!-- Title + Text -->
+  <div>
+    <h3
+      class="text-[#000000] font-dmsans font-bold text-[20px] leading-[100%] mb-[12px]"
+    >
+      Sign-up
+    </h3>
+    <p
+      class="text-[#323338] font-dmsans text-[16px] leading-[140%] font-normal"
+    >
+      Get started instantly with a secure account. Authenticate, set your
+      environment, and connect your repo in seconds.
+    </p>
+  </div>
+  
+  <!-- Image (completely contained within the border) -->
+  <div
+    class="mt-[20px] w-full h-[180px] border border-[#42389E] rounded-[6px] bg-white flex justify-center items-center overflow-hidden"
+  >
+    <img
+      src="/images/welcome-page.png"
+      alt="Sign-up Screenshot"
+      class="w-full h-full object-cover"
+    />
+  </div>
+  
+  <!-- Button -->
+  <div class="flex justify-start mt-[24px]">
+    <button
+      class="flex items-center gap-2 text-[#42389E] font-dmsans font-medium text-[16px] leading-[100%] border-b border-transparent hover:border-[#42389E] transition"
+    >
+      Sign-up
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        class="w-4 h-4"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9 5l7 7-7 7"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+
+      <!-- Card 2 -->
+    <div
+      class="w-[370px] h-[420px] bg-[#EDECF6] rounded-[12px] shadow-md p-[40px] flex flex-col justify-between"
+    >
+      <!-- Title + Text -->
+      <div>
+        <h3
+          class="text-[#000000] font-dmsans font-bold text-[20px] leading-[100%] mb-[12px]"
+        >
+          Create Your Function
+        </h3>
+        <p
+          class="text-[#323338] font-dmsans text-[16px] leading-[140%] font-normal"
+        >
+          Define your function with our inline editor or upload existing code. Configure runtime, all in one unified UI.
+        </p>
+      </div>
+      
+      <!-- Image (completely contained within the border) -->
+      <div
+        class="mt-[20px] w-full h-[180px] border border-[#42389E] rounded-[6px] bg-white flex justify-center items-center overflow-hidden"
+      >
+        <img
+          src="/images/create-function.png"
+          alt="Create Function Screenshot"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      
+      <!-- Button -->
+      <div class="flex justify-start mt-[24px]">
+        <button
+          class="flex items-center gap-2 text-[#42389E] font-dmsans font-medium text-[16px] leading-[100%] border-b border-transparent hover:border-[#42389E] transition"
+        >
+          Create Function
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-4 h-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+      <!-- Card 3 -->
+  <div
+    class="w-[370px] h-[420px] bg-[#6AFF4B33] rounded-[12px] shadow-md p-[40px] flex flex-col justify-between"
+  >
+    <!-- Title + Text -->
+    <div>
+      <h3
+        class="text-[#000000] font-dmsans font-bold text-[20px] leading-[100%] mb-[12px]"
+      >
+        Deploy Function
+      </h3>
+      <p
+        class="text-[#323338] font-dmsans text-[16px] leading-[140%] font-normal"
+      >
+        Hit deploy to push your function live. Monitor logs, performance, and real-time metrics from our dashboard, anytime, zero hassle.
+      </p>
+    </div>
+    
+    <!-- Image (completely contained within the border) -->
+    <div
+      class="mt-[20px] w-full h-[180px] border border-[#42389E] rounded-[6px] bg-white flex justify-center items-center overflow-hidden"
+    >
+      <img
+        src="/images/create-function-deploy.png"
+        alt="Deploy Function Screenshot"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    
+    <!-- Button -->
+    <div class="flex justify-start mt-[24px]">
+      <button
+        class="flex items-center gap-2 text-[#42389E] font-dmsans font-medium text-[16px] leading-[100%] border-b border-transparent hover:border-[#42389E] transition"
+      >
+        Deploy Function
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-4 h-4"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+    </div>
+  </section>
+  <!-- Why Teams Use DartCloudFunctions Section -->
+<section class="bg-white py-[100px]">
+  <!-- Title -->
+  <h2
+    class="text-[#42389E] text-center font-dmsans font-bold text-[32px] leading-[100%] mb-[80px]"
+  >
+    Why Teams Use DartCloudFunctions
+  </h2>
+  
+  <!-- Four feature boxes -->
+  <div
+    class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-[60px] px-[40px]"
+  >
+    <!-- Feature 1: Built for Scale -->
+    <div class="flex flex-col items-center text-center">
+      <!-- Icon container -->
+      <div class="mb-[20px]">
+        <img
+          src="/images/Frame-1.png"
+          alt="Built for Scale Icon"
+          class="w-[64px] h-[64px]"
+        />
+      </div>
+      <!-- Title -->
+      <h3
+        class="text-[#000000] font-dmsans font-bold text-[18px] leading-[100%] mb-[12px]"
+      >
+        Built for Scale
+      </h3>
+      <!-- Description -->
+      <p
+        class="text-[#323338] font-dmsans font-normal text-[14px] leading-[140%]"
+      >
+        Functions auto-scale to handle spikes in traffic effortlessly.
+      </p>
+    </div>
+
+    <!-- Feature 2: Dart Native Language -->
+    <div class="flex flex-col items-center text-center">
+      <!-- Icon container -->
+      <div class="mb-[20px]">
+        <img
+          src="/images/Frame-2.png"
+          alt="Dart Native Language Icon"
+          class="w-[64px] h-[64px]"
+        />
+      </div>
+      <!-- Title -->
+      <h3
+        class="text-[#000000] font-dmsans font-bold text-[18px] leading-[100%] mb-[12px]"
+      >
+        Dart Native Language
+      </h3>
+      <!-- Description -->
+      <p
+        class="text-[#323338] font-dmsans font-normal text-[14px] leading-[140%]"
+      >
+        Seamlessly integrate with Dart, plus Dart SDK support.
+      </p>
+    </div>
+
+    <!-- Feature 3: Faster Deployments -->
+    <div class="flex flex-col items-center text-center">
+      <!-- Icon container -->
+      <div class="mb-[20px]">
+        <img
+          src="/images/Frame-3.png"
+          alt="Faster Deployments Icon"
+          class="w-[64px] h-[64px]"
+        />
+      </div>
+      <!-- Title -->
+      <h3
+        class="text-[#000000] font-dmsans font-bold text-[18px] leading-[100%] mb-[12px]"
+      >
+        Faster Deployments
+      </h3>
+      <!-- Description -->
+      <p
+        class="text-[#323338] font-dmsans font-normal text-[14px] leading-[140%]"
+      >
+        Push from code to cloud in seconds.
+      </p>
+    </div>
+
+    <!-- Feature 4: Pay for What You Use -->
+    <div class="flex flex-col items-center text-center">
+      <!-- Icon container -->
+      <div class="mb-[20px]">
+        <img
+          src="/images/Frame-4.png"
+          alt="Pay for What You Use Icon"
+          class="w-[64px] h-[64px]"
+        />
+      </div>
+      <!-- Title -->
+      <h3
+        class="text-[#000000] font-dmsans font-bold text-[18px] leading-[100%] mb-[12px]"
+      >
+        Pay for What You Use
+      </h3>
+      <!-- Description -->
+      <p
+        class="text-[#323338] font-dmsans font-normal text-[14px] leading-[140%]"
+      >
+        No idle costs, only pay per execution.
+      </p>
+    </div>
+  </div>
 </section>
 
-
+<!-- Built For Enterprise Teams Section -->
+<section class="bg-white py-[100px]">
+  <!-- Title -->
+  <h2
+    class="text-[#42389E] text-center font-dmsans font-bold text-[32px] leading-[100%] mb-[80px]"
+  >
+    Built For Enterprise Teams
+  </h2>
+  
+  <!-- Purple container with content -->
+  <div class="max-w-[1200px] mx-auto px-[40px]">
+    <div
+      class="bg-[#42389E] rounded-[12px] p-[60px] flex flex-col md:flex-row gap-[60px] items-center"
+    >
+      <!-- Left side - Text content -->
+      <div class="flex-1">
+        <!-- Badge -->
+        <div class="inline-block mb-[24px]">
+          <span
+            class="bg-[#F9B223] text-[#000000] font-dmsans font-semibold text-[14px] px-[20px] py-[8px] rounded-full"
+          >
+            Enterprise-Ready
+          </span>
+        </div>
+        
+        <!-- Heading -->
+        <h3
+          class="text-white font-dmsans font-bold text-[28px] leading-[120%] mb-[24px]"
+        >
+          Seamless Team & Role Management
+        </h3>
+        
+        <!-- Paragraph 1 -->
+        <p
+          class="text-white font-dmsans font-normal text-[16px] leading-[150%] mb-[20px]"
+        >
+          Empower your enterprise teams with secure, centralized control. DartCloud Functions makes it simple to assign roles, manage approvals, and oversee projects all from one workspace.
+        </p>
+        
+        <!-- Paragraph 2 -->
+        <p
+          class="text-white font-dmsans font-normal text-[16px] leading-[150%]"
+        >
+          With built-in stability, cost efficiency, and enterprise-grade security, you can scale confidently while maintaining complete visibility and control across your organization.
+        </p>
+      </div>
+      
+      <!-- Right side - Dashboard Image -->
+      <div class="flex-1">
+        <div
+          class="bg-white rounded-[8px] border border-[#E5E5E5] overflow-hidden shadow-lg"
+        >
+          <img
+            src="/images/settings.png"
+            alt="Enterprise Team Management Dashboard"
+            class="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <CTA class="mt-[160px]" />
+  <Footer />
 </template>
-
+<style scoped>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap');
+  .font-dmsans {
+    font-family: 'DM Sans', sans-serif;
+  }
+  </style>
 <script setup>
-import CTASection from '~/components/CTA.vue'
+import CTA from '~/components/CTA.vue'
 import Footer from '~/components/Footer.vue'
 </script>
