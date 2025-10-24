@@ -14,54 +14,51 @@
         <div
           class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-[40px] md:gap-[60px] lg:gap-[80px]"
         >
-          <!-- Left Column -->
+          <!-- Left Column - REMOVED justify-between, using consistent gap -->
           <div
-            class="flex flex-col justify-between gap-[24px] w-full lg:max-w-[600px] order-2 lg:order-1"
+            class="flex flex-col gap-[32px] w-full lg:max-w-[600px] order-2 lg:order-1"
           >
-            <!-- Top Section -->
-            <div class="flex flex-col gap-[24px]">
-              <!-- Our Mission -->
+            <!-- Our Mission -->
+            <div class="flex flex-col gap-[8px]">
+              <h2
+                class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
+              >
+                Our Mission
+              </h2>
+              <p
+                class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]"
+              >
+                We believe developers should focus on building logic, not managing infrastructure.
+                Our Cloud Function is designed to give startups, enterprises, and innovators the
+                ability to deploy functions seamlessly, while staying cost-efficient and scalable.
+              </p>
+            </div>
+
+            <!-- Our Story -->
+            <div class="flex flex-col gap-[8px]">
+              <h2
+                class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
+              >
+                Our Story
+              </h2>
               <div class="flex flex-col gap-[8px]">
-                <h2
-                  class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
-                >
-                  Our Mission
-                </h2>
                 <p
                   class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]"
                 >
-                  We believe developers should focus on building logic, not managing infrastructure.
-                  Our Cloud Function is designed to give startups, enterprises, and innovators the
-                  ability to deploy functions seamlessly, while staying cost-efficient and scalable.
+                  We started with a simple question: Why should deploying a function be harder than
+                  writing one?
                 </p>
-              </div>
-
-              <!-- Our Story -->
-              <div class="flex flex-col gap-[8px]">
-                <h2
-                  class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
+                <p
+                  class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]"
                 >
-                  Our Story
-                </h2>
-                <div class="flex flex-col gap-[8px]">
-                  <p
-                    class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]"
-                  >
-                    We started with a simple question: Why should deploying a function be harder than
-                    writing one?
-                  </p>
-                  <p
-                    class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]"
-                  >
-                    From that, we built a platform where any developer, from solo hackers to
-                    enterprise teams, can sign up, create, and deploy functions without worrying
-                    about servers, scaling, or downtime.
-                  </p>
-                </div>
+                  From that, we built a platform where any developer, from solo hackers to
+                  enterprise teams, can sign up, create, and deploy functions without worrying
+                  about servers, scaling, or downtime.
+                </p>
               </div>
             </div>
 
-            <!-- Bottom Section -->
+            <!-- What We Value -->
             <div class="flex flex-col gap-[8px]">
               <button
                 @click="toggleValues"
