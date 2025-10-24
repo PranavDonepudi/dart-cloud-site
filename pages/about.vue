@@ -198,4 +198,16 @@ onUnmounted(() => {
   font-family: 'DM Sans', sans-serif;
 }
 
-/* Smooth
+/* Smooth expand/collapse animation */
+.expand-enter-active,
+.expand-leave-active {
+  transition: height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  height: 0;
+  opacity: 0;
+}
+</style>
