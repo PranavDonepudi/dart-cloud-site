@@ -8,42 +8,45 @@
           About DartCloudFunctions
         </h1>
 
-        <!-- Two Column Layout - Stack on mobile, side-by-side on desktop -->
-        <div class="flex flex-col lg:flex-row gap-[40px] md:gap-[60px] lg:gap-[80px] items-start lg:items-stretch justify-between">
-          <!-- Left Column - Text Content -->
+        <!-- Two Column Layout - Both columns same height on desktop -->
+        <div class="flex flex-col lg:flex-row gap-[40px] md:gap-[60px] lg:gap-[80px] lg:items-stretch justify-between">
+          <!-- Left Column - Text Content with space-between -->
           <div 
-            class="flex flex-col gap-[20px] md:gap-[24px] w-full lg:max-w-[623px] order-2 lg:order-1"
+            class="flex flex-col gap-[20px] md:gap-[24px] w-full lg:max-w-[623px] order-2 lg:order-1 lg:justify-between"
           >
-            <!-- Our Mission -->
-            <div class="flex flex-col gap-[8px]">
-              <h2 
-                class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
-              >
-                Our Mission
-              </h2>
-              <p class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]">
-                We believe developers should focus on building logic, not managing infrastructure. Our Cloud Function is designed to give startups, enterprises, and innovators the ability to deploy functions seamlessly, while staying cost-efficient and scalable.
-              </p>
-            </div>
-
-            <!-- Our Story -->
-            <div class="flex flex-col gap-[8px]">
-              <h2 
-                class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
-              >
-                Our Story
-              </h2>
+            <!-- Top Section: Mission and Story -->
+            <div class="flex flex-col gap-[20px] md:gap-[24px]">
+              <!-- Our Mission -->
               <div class="flex flex-col gap-[8px]">
+                <h2 
+                  class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
+                >
+                  Our Mission
+                </h2>
                 <p class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]">
-                  We started with a simple question: Why should deploying a function be harder than writing one?
+                  We believe developers should focus on building logic, not managing infrastructure. Our Cloud Function is designed to give startups, enterprises, and innovators the ability to deploy functions seamlessly, while staying cost-efficient and scalable.
                 </p>
-                <p class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]">
-                  From that, we built a platform where any developer, from solo hackers to enterprise teams, can sign up, create, and deploy functions without worrying about servers, scaling, or downtime.
-                </p>
+              </div>
+
+              <!-- Our Story -->
+              <div class="flex flex-col gap-[8px]">
+                <h2 
+                  class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
+                >
+                  Our Story
+                </h2>
+                <div class="flex flex-col gap-[8px]">
+                  <p class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]">
+                    We started with a simple question: Why should deploying a function be harder than writing one?
+                  </p>
+                  <p class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]">
+                    From that, we built a platform where any developer, from solo hackers to enterprise teams, can sign up, create, and deploy functions without worrying about servers, scaling, or downtime.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <!-- What We Value - Collapsible on mobile -->
+            <!-- Bottom Section: What We Value -->
             <div class="flex flex-col gap-[8px]">
               <button
                 @click="toggleValues"
@@ -102,10 +105,10 @@
           </div>
 
           <!-- Right Column - Purple Box with Image -->
-          <div class="w-full lg:flex-shrink-0 flex justify-center order-1 lg:order-2 lg:self-start">
+          <div class="w-full lg:flex-shrink-0 flex justify-center items-start order-1 lg:order-2">
             <!-- Outer Purple Box -->
             <div 
-              class="bg-[#42389E] rounded-[12px] p-[24px] md:p-[40px] lg:p-[48px] flex flex-col gap-[10px] w-full max-w-[828px]"
+              class="bg-[#42389E] rounded-[12px] p-[24px] md:p-[40px] lg:p-[48px] w-full max-w-[828px]"
               style="box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);"
             >
               <!-- Inner Image Container -->
@@ -195,16 +198,4 @@ onUnmounted(() => {
   font-family: 'DM Sans', sans-serif;
 }
 
-/* Smooth expand/collapse animation */
-.expand-enter-active,
-.expand-leave-active {
-  transition: height 0.3s ease, opacity 0.3s ease;
-  overflow: hidden;
-}
-
-.expand-enter-from,
-.expand-leave-to {
-  height: 0;
-  opacity: 0;
-}
-</style>
+/* Smooth
