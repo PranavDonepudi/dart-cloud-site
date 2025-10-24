@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import WorkflowCard from '~/components/home/WorkflowCard.vue'
+import WorkflowCard from '~/components/home/WorkFlowCard.vue'
 </script>
 
 <style scoped>

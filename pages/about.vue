@@ -9,13 +9,13 @@
         </h1>
 
         <!-- Two Column Layout - Stack on mobile, side-by-side on desktop -->
-        <div class="flex flex-col lg:flex-row gap-[40px] md:gap-[60px] lg:gap-[80px] items-start justify-between">
+        <div class="flex flex-col lg:flex-row gap-[40px] md:gap-[60px] lg:gap-[80px] items-start lg:items-stretch justify-between">
           <!-- Left Column - Text Content -->
           <div 
-            class="flex flex-col gap-[24px] md:gap-[32px] w-full lg:max-w-[623px] order-2 lg:order-1"
+            class="flex flex-col gap-[20px] md:gap-[24px] w-full lg:max-w-[623px] order-2 lg:order-1"
           >
             <!-- Our Mission -->
-            <div class="flex flex-col gap-[8px] md:gap-[12px]">
+            <div class="flex flex-col gap-[8px]">
               <h2 
                 class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
               >
@@ -27,13 +27,13 @@
             </div>
 
             <!-- Our Story -->
-            <div class="flex flex-col gap-[8px] md:gap-[12px]">
+            <div class="flex flex-col gap-[8px]">
               <h2 
                 class="text-[#000000] font-dmsans font-bold text-[20px] md:text-[24px] leading-[120%]"
               >
                 Our Story
               </h2>
-              <div class="flex flex-col gap-[8px] md:gap-[12px]">
+              <div class="flex flex-col gap-[8px]">
                 <p class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]">
                   We started with a simple question: Why should deploying a function be harder than writing one?
                 </p>
@@ -44,7 +44,7 @@
             </div>
 
             <!-- What We Value - Collapsible on mobile -->
-            <div class="flex flex-col gap-[8px] md:gap-[12px]">
+            <div class="flex flex-col gap-[8px]">
               <button
                 @click="toggleValues"
                 class="flex items-center justify-between text-left md:cursor-default group"
@@ -82,7 +82,7 @@
               >
                 <ul 
                   v-show="valuesExpanded || isDesktop"
-                  class="list-disc list-inside space-y-[8px] md:space-y-[12px] pl-1"
+                  class="list-disc list-inside space-y-[8px] pl-1"
                 >
                   <li class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]">
                     <span class="font-semibold text-[#000000]">Simplicity:</span> Tools that are easy to use yet powerful.
@@ -102,7 +102,7 @@
           </div>
 
           <!-- Right Column - Purple Box with Image -->
-          <div class="w-full lg:flex-shrink-0 flex justify-center order-1 lg:order-2">
+          <div class="w-full lg:flex-shrink-0 flex justify-center order-1 lg:order-2 lg:self-start">
             <!-- Outer Purple Box -->
             <div 
               class="bg-[#42389E] rounded-[12px] p-[24px] md:p-[40px] lg:p-[48px] flex flex-col gap-[10px] w-full max-w-[828px]"
