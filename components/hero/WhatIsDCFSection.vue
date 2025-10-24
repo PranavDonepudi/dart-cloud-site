@@ -1,22 +1,22 @@
 <template>
-  <section class="relative w-full bg-white py-[160px]">
+  <section class="relative w-full bg-white py-[80px] md:py-[160px]">
     <!-- Section Title -->
     <h2
-      class="text-center text-[#42389E] font-dmsans font-bold text-[32px] leading-[100%] mb-[100px]"
+      class="text-center text-[#42389E] font-dmsans font-bold text-[24px] md:text-[32px] leading-[100%] mb-[60px] md:mb-[100px] px-4 w-full"
       style="letter-spacing: 0%; vertical-align: middle;"
     >
       What Is <span class="text-[#42389E]">DartCloudFunctions</span>
     </h2>
 
-    <!-- Content Grid -->
+    <!-- Content Grid - Stack on mobile, side-by-side on desktop -->
     <div
-      class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-[80px] items-center"
+      class="w-full max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[40px] md:gap-[80px] items-center px-4"
     >
       <!-- Left Text Content -->
-      <div class="px-[100px]">
+      <div class="w-full px-0 md:px-[50px] lg:px-[100px] order-2 lg:order-1">
         <!-- Heading -->
         <h3
-          class="text-[#0E121B] font-dmsans font-semibold text-[24px] leading-[100%] mb-[32px]"
+          class="text-[#0E121B] font-dmsans font-semibold text-[20px] md:text-[24px] leading-[120%] md:leading-[100%] mb-[24px] md:mb-[32px]"
           style="letter-spacing: 0%; vertical-align: middle; font-weight: 600;"
         >
           Redefining Server-less for Dart Developers
@@ -24,7 +24,7 @@
 
         <!-- Paragraph 1 -->
         <p
-          class="text-[#5F5F60] font-dmsans font-normal text-[16px] leading-[100%] mb-[20px]"
+          class="text-[#5F5F60] font-dmsans font-normal text-[14px] md:text-[16px] leading-[140%] md:leading-[100%] mb-[16px] md:mb-[20px]"
           style="letter-spacing: 0%; vertical-align: middle;"
         >
           DartCloudFunctions is the
@@ -37,7 +37,7 @@
 
         <!-- Paragraph 2 -->
         <p
-          class="text-[#5F5F60] font-dmsans font-normal text-[16px] leading-[100%]"
+          class="text-[#5F5F60] font-dmsans font-normal text-[14px] md:text-[16px] leading-[140%] md:leading-[100%]"
           style="letter-spacing: 0%; vertical-align: middle;"
         >
           With DartCloudFunctions, you write lightweight Dart functions, trigger
@@ -45,32 +45,23 @@
         </p>
       </div>
 
-      <!-- Right Image in Purple Frame -->
-      <div class="relative flex justify-center items-center">
-        <!-- Outer Purple Box - Auto-sized to content -->
+      <!-- Right Image in Purple Frame - Show first on mobile -->
+      <div class="relative flex justify-center items-center order-1 lg:order-2 w-full">
+        <!-- Outer Purple Box - Responsive sizing -->
         <div
-          class="bg-[#42389E] rounded-[12px] p-[48px]"
+          class="bg-[#42389E] rounded-[12px] p-[24px] md:p-[48px] w-full max-w-[828px]"
           style="box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);"
         >
-          <!-- Inner Image Box - Max dimensions, auto-adjust to image -->
+          <!-- Inner Image Box -->
           <div
-            class="rounded-[6px] border-[0.5px] border-[#8D8D8D] overflow-hidden flex items-center justify-center"
-            style="
-              max-width: 732px;
-              max-height: 412px;
-              box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);
-            "
+            class="rounded-[6px] border-[0.5px] border-[#8D8D8D] overflow-hidden flex items-center justify-center w-full"
+            style="box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);"
           >
             <img
               src="/images/dashboard.png"
               alt="DartCloud Dashboard"
-              style="
-                max-width: 732px;
-                max-height: 412px;
-                width: 100%;
-                height: auto;
-                display: block;
-              "
+              class="w-full h-auto object-contain"
+              style="max-width: 732px; max-height: 412px; display: block;"
             />
           </div>
         </div>

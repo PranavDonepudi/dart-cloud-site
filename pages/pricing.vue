@@ -1,17 +1,17 @@
 <template>
   <div class="bg-white min-h-screen pt-[var(--navbar-height)]">
     <!-- Pricing Hero Section -->
-    <section class="bg-white py-[120px] px-[60px] lg:px-[100px]">
+    <section class="bg-white py-[80px] md:py-[120px] px-4 md:px-[60px] lg:px-[100px] w-full">
 
-      <div class="w-full px-[60px]">
+      <div class="w-full px-4 md:px-[60px]">
 
         <!-- Page Title -->
-        <h1 class="text-[#42389E] text-center font-dmsans font-bold text-[48px] leading-[100%] mb-[80px]">
+        <h1 class="text-[#42389E] text-center font-dmsans font-bold text-[32px] md:text-[40px] lg:text-[48px] leading-[100%] mb-[60px] md:mb-[80px]">
           Plans Built For Every Stage Of Growth
         </h1>
 
-        <!-- Pricing Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-[80px] w-full mb-[80px]">
+        <!-- Pricing Cards Grid - Stack on mobile, 2 cols on tablet, 4 cols on desktop -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] md:gap-[40px] lg:gap-[80px] w-full mb-[60px] md:mb-[80px]">
 
           <!-- Card 1: Standard -->
           <PricingCard
@@ -112,29 +112,45 @@
           />
         </div>
 
-        <!-- 7-Day Free Sandbox Plan Box -->
+        <!-- 7-Day Free Sandbox Plan Box - Stack on mobile -->
         <div
-          class="w-full bg-[#EDECF6] rounded-[12px] px-[32px] py-[48px] flex items-center justify-between"
+          class="w-full bg-[#EDECF6] rounded-[12px] px-[20px] md:px-[32px] py-[40px] md:py-[48px] flex flex-col lg:flex-row items-center justify-between gap-[24px] lg:gap-[40px]"
         >
           <!-- Left side - Text -->
-          <div>
-            <h3 class="text-[#42389E] font-dmsans font-bold text-[28px] leading-[120%] mb-[12px]">
-              Start your 7-day- free Sandbox Plan
+          <div class="text-center lg:text-left w-full">
+            <h3 class="text-[#42389E] font-dmsans font-bold text-[24px] md:text-[28px] leading-[120%] mb-[12px]">
+              Start your 7-day free Sandbox Plan
             </h3>
-            <p class="text-[#5F6065] font-dmsans text-[16px] leading-[150%]">
+            <p class="text-[#5F6065] font-dmsans text-[14px] md:text-[16px] leading-[150%]">
               Join over 1,000+ startups already growing with Untitled.
             </p>
           </div>
 
-          <!-- Right side - Buttons -->
-          <div class="flex gap-[16px]">
+          <!-- Right side - Buttons with mobile interactivity -->
+          <div class="flex flex-col sm:flex-row gap-[16px] w-full lg:w-auto">
             <button
-              class="bg-[#F9A71E] text-white font-dmsans font-semibold text-[16px] px-[32px] py-[12px] rounded-[8px] hover:bg-[#e5961c] transition"
+              @touchstart="handleTouchStart('getStarted')"
+              @touchend="handleTouchEnd('getStarted')"
+              @click="handleClick('getStarted')"
+              :class="[
+                'bg-[#F9A71E] text-white font-dmsans font-semibold text-[14px] md:text-[16px]',
+                'px-[28px] md:px-[32px] py-[12px] rounded-[8px] transition-all duration-200',
+                'hover:bg-[#e5961c] w-full sm:w-auto',
+                activeButton === 'getStarted' ? 'scale-95 bg-[#e5961c]' : 'scale-100'
+              ]"
             >
               Get Started
             </button>
             <button
-              class="border-2 border-[#F9A71E] text-[#F9A71E] font-dmsans font-semibold text-[16px] px-[32px] py-[12px] rounded-[8px] hover:bg-[#F9A71E] hover:text-white transition"
+              @touchstart="handleTouchStart('learnMore')"
+              @touchend="handleTouchEnd('learnMore')"
+              @click="handleClick('learnMore')"
+              :class="[
+                'border-2 border-[#F9A71E] text-[#F9A71E] font-dmsans font-semibold',
+                'text-[14px] md:text-[16px] px-[28px] md:px-[32px] py-[12px] rounded-[8px]',
+                'transition-all duration-200 hover:bg-[#F9A71E] hover:text-white w-full sm:w-auto',
+                activeButton === 'learnMore' ? 'scale-95 bg-[#F9A71E] text-white' : 'scale-100'
+              ]"
             >
               Learn More
             </button>
@@ -152,6 +168,8 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 definePageMeta({
   layout: 'white-navbar'
 })
@@ -159,6 +177,29 @@ definePageMeta({
 import PricingCard from '~/components/PricingCard.vue'
 import EnterpriseSection from '~/components/home/EnterpriseSection.vue'
 import CTA from '~/components/CTA.vue'
+
+// Mobile interactivity for buttons
+const activeButton = ref(null)
+let touchTimeout = null
+
+const handleTouchStart = (button) => {
+  activeButton.value = button
+}
+
+const handleTouchEnd = (button) => {
+  if (touchTimeout) {
+    clearTimeout(touchTimeout)
+  }
+  
+  touchTimeout = setTimeout(() => {
+    activeButton.value = null
+  }, 150)
+}
+
+const handleClick = (button) => {
+  console.log(`${button} button clicked`)
+  // Add your navigation or action logic here
+}
 </script>
 
 <style scoped>
@@ -166,5 +207,13 @@ import CTA from '~/components/CTA.vue'
 
 .font-dmsans {
   font-family: 'DM Sans', sans-serif;
+}
+
+/* Touch-friendly buttons */
+button {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 </style>

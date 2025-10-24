@@ -1,79 +1,81 @@
 <template>
   <section
     class="relative w-full flex flex-col items-center text-center text-white overflow-visible
-           pt-[213px] pb-[300px]"
-    style="min-height: 1003px;"
+           pt-[180px] md:pt-[213px] pb-[200px] md:pb-[300px]"
+    style="min-height: 700px; md:min-height: 1003px;"
   >
-    <!-- Background Image - Rotated 180 degrees -->
+    <!-- Background Image -->
     <div
       class="absolute inset-0 -z-10"
       style="
         background-color: #342D76;
         background-image: url('/images/hero-bkg.jpg');
-        background-size: 1920px 1003px;
+        background-size: cover;
         background-repeat: no-repeat;
-        background-position: center top;
+        background-position: center center;
         transform: scaleX(-1);
-        width: 1920px;
-        height: 1003px;
+        width: 100%;
+        height: 100%;
       "
     ></div>
 
     <!-- Overlay -->
-    <div class="absolute inset-0 -z-10 bg-[#342D76]/70" style="height: 1003px;"></div>
+    <div class="absolute inset-0 -z-10 bg-[#342D76]/70"></div>
 
-    <!-- Hero Text + Buttons Frame (NOT rotated) -->
+    <!-- Hero Text + Buttons Frame -->
     <div 
-      class="relative z-10 flex flex-col items-center"
-      style="width: 1087px; max-height: 308px; gap: 24px;"
+      class="relative z-10 flex flex-col items-center px-4 md:px-6 max-w-4xl"
+      style="gap: 24px;"
     >
-      <h1 class="text-4xl sm:text-6xl font-bold leading-tight font-dmsans">
+      <!-- Responsive heading: smaller on mobile, larger on desktop -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-dmsans">
         Build and Deploy Server-less<br />
         Functions Using <span class="text-[#F9B223]">Dart</span>
       </h1>
 
-      <p class="text-lg text-gray-200 font-dmsans">
-        Transform raw data into clean, actionable insights instantly.<br />
+      <!-- Responsive paragraph -->
+      <p class="text-base md:text-lg text-gray-200 font-dmsans">
+        Transform raw data into clean, actionable insights instantly.<br class="hidden md:block" />
         No infrastructure headaches.
       </p>
 
-      <div class="flex justify-center gap-4">
+      <!-- Responsive buttons: stack on mobile, side-by-side on desktop -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
         <button
-          class="bg-[#F9B223] text-white font-semibold px-6 py-3 rounded-md font-dmsans hover:bg-[#e5a51f] transition"
+          class="bg-[#F9B223] text-white font-semibold px-6 py-3 rounded-md font-dmsans hover:bg-[#e5a51f] transition w-full sm:w-auto"
         >
           Deploy Functions
         </button>
         <button
-          class="border border-[#F9B223] text-[#F9B223] font-semibold px-6 py-3 rounded-md hover:bg-[#F9B223] hover:text-white transition font-dmsans"
+          class="border border-[#F9B223] text-[#F9B223] font-semibold px-6 py-3 rounded-md hover:bg-[#F9B223] hover:text-white transition font-dmsans w-full sm:w-auto"
         >
           Start Sandbox
         </button>
       </div>
     </div>
 
-    <!-- Spacing after buttons before image -->
-    <div class="h-[120px]"></div>
+    <!-- Spacing after buttons -->
+    <div class="h-[80px] md:h-[120px]"></div>
 
-    <!-- Image overlapping page 2 -->
-    <div class="absolute left-1/2 bottom-[-400px] -translate-x-1/2 z-20">
-      <!-- Main large image -->
+    <!-- Image overlapping (hide on mobile, show on tablet+) -->
+    <div class="hidden lg:block absolute left-1/2 bottom-[-300px] md:bottom-[-400px] -translate-x-1/2 z-20">
       <div
-        class="relative w-[1396px] h-[786px] rounded-[12px] border border-[#42389E] overflow-hidden"
+        class="relative w-[900px] lg:w-[1396px] h-[506px] lg:h-[786px] rounded-[12px] border border-[#42389E] overflow-hidden"
       >
         <img
           src="/images/home-image.png"
           alt="Create Functions Preview"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover rounded-[12px]"
         />
 
-        <!-- First overlapping white image -->
+        <!-- First overlapping white image - BOTTOM RIGHT CORNER (inside image bounds) -->
         <div
           class="absolute"
           style="
             width: 594px;
             height: 362px;
-            top: 424px;
-            left: 802px;
+            bottom: 10px;
+            right: 10px;
             border: 1px solid #E5E5E5;
             border-top-left-radius: 12px;
             border-bottom-right-radius: 12px;
@@ -82,6 +84,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
           "
         >
           <img
@@ -103,6 +106,7 @@
             border: 1px solid #E5E5E5;
             background-color: #ffffff;
             overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
           "
         >
           <img

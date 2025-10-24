@@ -1,23 +1,23 @@
 <template>
-  <section class="bg-white py-[100px]">
+  <section class="bg-white py-[60px] md:py-[100px] w-full">
     <!-- Title -->
     <h2
-      class="text-[#42389E] text-center font-dmsans font-bold text-[32px] leading-[100%] mb-[80px]"
+      class="text-[#42389E] text-center font-dmsans font-bold text-[24px] md:text-[32px] leading-[100%] mb-[40px] md:mb-[80px] px-4 w-full"
     >
       Built For Enterprise Teams
     </h2>
     
-    <!-- Purple container with content -->
-    <div class="max-w-[1200px] mx-auto px-[40px]">
+    <!-- Purple container - Stack on mobile, side-by-side on desktop -->
+    <div class="w-full max-w-[1200px] mx-auto px-4 md:px-[40px]">
       <div
-        class="bg-[#42389E] rounded-[12px] p-[60px] flex flex-col md:flex-row gap-[60px] items-center"
+        class="bg-[#42389E] rounded-[12px] p-[30px] md:p-[60px] flex flex-col lg:flex-row gap-[30px] md:gap-[60px] items-center w-full"
       >
         <!-- Left side - Text content -->
-        <div class="flex-1">
+        <div class="flex-1 w-full">
           <!-- Badge -->
-          <div class="inline-block mb-[24px]">
+          <div class="inline-block mb-[20px] md:mb-[24px]">
             <span
-              class="bg-[#F9B223] text-[#000000] font-dmsans font-semibold text-[14px] px-[20px] py-[8px] rounded-full"
+              class="bg-[#F9B223] text-[#000000] font-dmsans font-semibold text-[12px] md:text-[14px] px-[16px] md:px-[20px] py-[6px] md:py-[8px] rounded-full"
             >
               Enterprise-Ready
             </span>
@@ -25,30 +25,29 @@
           
           <!-- Heading -->
           <h3
-            class="text-white font-dmsans font-bold text-[28px] leading-[120%] mb-[24px]"
+            class="text-white font-dmsans font-bold text-[22px] md:text-[28px] leading-[120%] mb-[20px] md:mb-[24px]"
           >
             Seamless Team & Role Management
           </h3>
           
-          <!-- Paragraph 1 -->
+          <!-- Paragraphs -->
           <p
-            class="text-white font-dmsans font-normal text-[16px] leading-[150%] mb-[20px]"
+            class="text-white font-dmsans font-normal text-[14px] md:text-[16px] leading-[150%] mb-[16px] md:mb-[20px]"
           >
             Empower your enterprise teams with secure, centralized control. DartCloud Functions makes it simple to assign roles, manage approvals, and oversee projects all from one workspace.
           </p>
           
-          <!-- Paragraph 2 -->
           <p
-            class="text-white font-dmsans font-normal text-[16px] leading-[150%]"
+            class="text-white font-dmsans font-normal text-[14px] md:text-[16px] leading-[150%]"
           >
             With built-in stability, cost efficiency, and enterprise-grade security, you can scale confidently while maintaining complete visibility and control across your organization.
           </p>
         </div>
         
         <!-- Right side - Dashboard Image -->
-        <div class="flex-1">
+        <div class="flex-1 w-full">
           <div
-            class="bg-white rounded-[8px] border border-[#E5E5E5] overflow-hidden shadow-lg"
+            class="bg-white rounded-[8px] border border-[#E5E5E5] overflow-hidden shadow-lg w-full"
           >
             <img
               src="/images/settings.png"

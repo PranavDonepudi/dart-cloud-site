@@ -1,16 +1,16 @@
 <template>
-  <section class="bg-white py-[100px]">
+  <section class="bg-white py-[60px] md:py-[100px] w-full">
     <!-- Title -->
     <h2
-      class="text-[#42389E] text-center font-dmsans font-bold text-[32px] leading-[100%] mb-[80px]"
+      class="text-[#42389E] text-center font-dmsans font-bold text-[24px] md:text-[32px] leading-[100%] mb-[40px] md:mb-[80px] px-4 w-full"
       style="letter-spacing: 0%; vertical-align: middle;"
     >
       How DartCloudFunctions Works
     </h2>
 
-    <!-- Three cards container -->
+    <!-- Three cards container - Stack on mobile, row on desktop -->
     <div
-      class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[40px] justify-items-center"
+      class="w-full max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] md:gap-[40px] justify-items-center px-4"
     >
       <!-- Card 1 -->
       <WorkflowCard

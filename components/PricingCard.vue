@@ -1,117 +1,175 @@
 <template>
   <div
-    :class="[cardBg, borderColor, 'w-[371px] min-h-[792px] rounded-[12px] border-[0.5px] p-[36px_24px] flex flex-col gap-[10px] relative overflow-hidden']"
+    :class="[
+      cardBg,
+      'rounded-[12px] border-2',
+      borderColor,
+      'p-[24px] md:p-[32px] flex flex-col gap-[20px] md:gap-[24px]',
+      'shadow-lg hover:shadow-xl transition-all duration-300',
+      'w-full h-full min-h-[500px] md:min-h-[600px]'
+    ]"
   >
-  <!-- 🟣 Icon + Popular + Billed Annually -->
-  <div class="relative mb-[40px]">
-    <!-- Icon -->
-    <div class="absolute top-[5px] left-[20px]">
-      <img
-        v-if="iconSrc"
-        :src="iconSrc"
-        alt="plan icon"
-        class="w-[32px] h-[32px]"
-      />
-    </div>
-
-    <!-- Popular badge (beside icon) -->
-    <div
-      v-if="badgeText"
-      class="absolute top-[20px] left-[70px]"
-    >
+    <!-- Badge (if exists) -->
+    <div v-if="badgeText" class="flex justify-center">
       <span
-        :class="[badgeColor, 'text-[#42389E] font-dmsans font-semibold text-[14px] px-[14px] py-[4px] rounded-full shadow-sm']"
+        :class="[
+          badgeColor,
+          'text-white font-dmsans font-semibold text-[12px] px-[16px] py-[6px] rounded-full'
+        ]"
       >
         {{ badgeText }}
       </span>
     </div>
 
-    <!-- Billed annually tilted badge -->
-    <div
-      class="absolute"
-      style="
-        width: 119px;
-        height: 33px;
-        top: 51px;
-        left: 200px;
-        transform: rotate(-12deg);
-      "
-    >
-      <span
-        class="flex items-center justify-center w-full h-full text-[#42389E] font-dmsans text-[12px] border border-[#42389E] rounded-[42px] bg-[#E1E2F0] shadow-sm"
-      >
-        Billed annually
-      </span>
+    <!-- Icon -->
+    <div class="flex justify-center">
+      <img
+        :src="iconSrc"
+        alt="Plan Icon"
+        class="w-[40px] h-[40px] md:w-[48px] md:h-[48px] object-contain"
+      />
     </div>
-  </div>
 
-
-    <!-- Rest of the card content -->
-    <h3 :class="[textColor, 'font-dmsans font-bold text-[24px] leading-[120%] mb-[8px]']">
+    <!-- Plan Name -->
+    <h3
+      :class="[
+        textColor,
+        'font-dmsans font-bold text-[20px] md:text-[24px] text-center leading-[120%]'
+      ]"
+    >
       {{ planName }}
     </h3>
 
-    <div class="flex items-baseline gap-[4px] mb-[24px]">
-      <span :class="[textColor, 'font-dmsans font-bold text-[48px] leading-[100%]']">
+    <!-- Price -->
+    <div class="flex items-baseline justify-center gap-[4px]">
+      <span
+        :class="[
+          textColor,
+          'font-dmsans font-bold text-[40px] md:text-[48px] leading-[100%]'
+        ]"
+      >
         {{ price }}
       </span>
-      <span :class="[textColor, 'font-dmsans text-[20px] leading-[100%]']">
+      <span
+        v-if="billingPeriod"
+        :class="[
+          textColor,
+          'font-dmsans text-[16px] md:text-[18px] opacity-70'
+        ]"
+      >
         {{ billingPeriod }}
       </span>
     </div>
 
-    <div :class="[borderColor, 'w-full h-[0.5px] mb-[24px]']"></div>
-
-    <ul class="space-y-[12px] mb-[32px] flex-grow">
+    <!-- Features List -->
+    <ul class="flex flex-col gap-[12px] flex-grow">
       <li
         v-for="(feature, index) in features"
         :key="index"
-        :class="[textColor, 'flex items-start gap-[8px] font-dmsans text-[14px] leading-[150%]']"
+        class="flex items-start gap-[8px]"
       >
+        <!-- Checkmark Icon -->
         <svg
           class="w-5 h-5 flex-shrink-0 mt-[2px]"
           :class="textColor"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
+          fill="currentColor"
+          viewBox="0 0 20 20"
         >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"
+          />
         </svg>
-        {{ feature }}
+        <span
+          :class="[
+            textColor,
+            'font-dmsans text-[13px] md:text-[14px] leading-[150%]'
+          ]"
+        >
+          {{ feature }}
+        </span>
       </li>
     </ul>
-    <!-- Transparent Subscribe Button -->
+
+    <!-- Button with mobile interactivity -->
     <button
+      @touchstart="handleTouchStart"
+      @touchend="handleTouchEnd"
+      @click="handleClick"
       :class="[
-        'w-full bg-transparent font-dmsans font-semibold text-[16px] py-[12px] rounded-[8px] border-2 transition duration-200',
-        // Base text + border color
-        cardBg === 'bg-[#42389E]'
-          ? 'text-white border-white hover:bg-white/10'
-          : 'text-[#42389E] border-[#42389E] hover:bg-[#42389E]/10 hover:text-[#42389E]'
+        buttonClasses,
+        'font-dmsans font-semibold text-[14px] md:text-[16px] px-[24px] md:px-[28px] py-[12px]',
+        'rounded-[8px] transition-all duration-200 w-full',
+        isPressed ? 'scale-95' : 'scale-100'
       ]"
     >
       {{ buttonText }}
     </button>
-
-
-
   </div>
 </template>
 
 <script setup>
-defineProps({
+import { ref, computed } from 'vue'
+
+const props = defineProps({
   planName: String,
   price: String,
-  billingPeriod: { type: String, default: '' },
-  badgeText: { type: String, default: '' },
-  badgeColor: { type: String, default: '' },
-  cardBg: { type: String, default: 'bg-white' },
-  textColor: { type: String, default: 'text-[#42389E]' },
-  borderColor: { type: String, default: 'border-[#42389E]' },
+  billingPeriod: String,
+  iconSrc: String,
+  badgeText: String,
+  badgeColor: String,
+  cardBg: String,
+  textColor: String,
+  borderColor: String,
   buttonText: String,
-  buttonStyle: { type: String, default: 'outline' },
-  features: Array,
-  iconSrc: { type: String, default: '' } // 🆕 added prop
+  buttonStyle: String, // 'solid' or 'outline'
+  features: Array
 })
+
+const isPressed = ref(false)
+let pressTimeout = null
+
+// Button styling based on style prop
+const buttonClasses = computed(() => {
+  if (props.buttonStyle === 'solid') {
+    return 'bg-[#F9B223] text-[#42389E] hover:bg-[#e5a51f]'
+  } else {
+    return `border-2 ${props.borderColor} ${props.textColor} hover:bg-[#42389E] hover:text-white`
+  }
+})
+
+const handleTouchStart = () => {
+  isPressed.value = true
+}
+
+const handleTouchEnd = () => {
+  if (pressTimeout) {
+    clearTimeout(pressTimeout)
+  }
+  
+  pressTimeout = setTimeout(() => {
+    isPressed.value = false
+  }, 150)
+}
+
+const handleClick = () => {
+  console.log(`${props.planName} - ${props.buttonText} clicked`)
+  // Add your action logic here
+}
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap');
+
+.font-dmsans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+</style>
