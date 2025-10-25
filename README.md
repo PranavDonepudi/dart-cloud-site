@@ -271,40 +271,6 @@ Following Tailwind's default scale (4px base):
 
 ---
 
-## ⏱️ Time Breakdown
-
-**Total Time Spent: ~8 hours**
-
-- **Setup & Configuration**: 0.5 hours
-  - Nuxt 3 project initialization
-  - TailwindCSS configuration
-  - Git repository setup
-
-- **Component Development**: 4 hours
-  - Navbar (mobile + desktop variants)
-  - Hero section with overlapping images
-  - All home page sections
-  - About and Pricing pages
-  - Footer component
-
-- **Responsive Design**: 1.5 hours
-  - Mobile breakpoint adjustments
-  - Tablet optimization
-  - Cross-device testing
-
-- **Interactive Features**: 1 hour
-  - Hamburger menu animation
-  - Button hover/tap states
-  - Collapsible sections
-  - Smooth transitions
-
-- **Deployment & Pixelay**: 1 hour
-  - Vercel deployment setup
-  - Pixelay comparison
-  - Documentation and notes
-
----
-
 ## 🔍 Code Quality Highlights
 
 ### **Component Modularity:**

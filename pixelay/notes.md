@@ -2,7 +2,7 @@
 
 ## Desktop View (1920px)
 
-### Excellent Matches:
+### Matches:
 - Overall page structure and layout hierarchy
 - Color scheme accurate (#42389E purple, #F9B223 yellow, #342D76 dark purple)
 - Typography using DM Sans font family
